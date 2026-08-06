@@ -1,0 +1,15 @@
+.\outfiles\timers.o: FreeRTOS\timers.c
+.\outfiles\timers.o: C:\Users\EVC2-5\AppData\Local\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+.\outfiles\timers.o: .\FreeRTOS\include\FreeRTOS.h
+.\outfiles\timers.o: C:\Users\EVC2-5\AppData\Local\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+.\outfiles\timers.o: C:\Users\EVC2-5\AppData\Local\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\outfiles\timers.o: .\FreeRTOS\include\FreeRTOSConfig.h
+.\outfiles\timers.o: .\FreeRTOS\include\projdefs.h
+.\outfiles\timers.o: .\FreeRTOS\include\portable.h
+.\outfiles\timers.o: .\FreeRTOS\include\deprecated_definitions.h
+.\outfiles\timers.o: .\FreeRTOS\portable\RVDS\ARM_CM4F\portmacro.h
+.\outfiles\timers.o: .\FreeRTOS\include\mpu_wrappers.h
+.\outfiles\timers.o: .\FreeRTOS\include\task.h
+.\outfiles\timers.o: .\FreeRTOS\include\list.h
+.\outfiles\timers.o: .\FreeRTOS\include\queue.h
+.\outfiles\timers.o: .\FreeRTOS\include\timers.h

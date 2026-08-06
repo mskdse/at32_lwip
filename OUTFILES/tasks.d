@@ -1,0 +1,16 @@
+.\outfiles\tasks.o: FreeRTOS\tasks.c
+.\outfiles\tasks.o: C:\Users\EVC2-5\AppData\Local\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+.\outfiles\tasks.o: C:\Users\EVC2-5\AppData\Local\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+.\outfiles\tasks.o: .\FreeRTOS\include\FreeRTOS.h
+.\outfiles\tasks.o: C:\Users\EVC2-5\AppData\Local\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+.\outfiles\tasks.o: C:\Users\EVC2-5\AppData\Local\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\outfiles\tasks.o: .\FreeRTOS\include\FreeRTOSConfig.h
+.\outfiles\tasks.o: .\FreeRTOS\include\projdefs.h
+.\outfiles\tasks.o: .\FreeRTOS\include\portable.h
+.\outfiles\tasks.o: .\FreeRTOS\include\deprecated_definitions.h
+.\outfiles\tasks.o: .\FreeRTOS\portable\RVDS\ARM_CM4F\portmacro.h
+.\outfiles\tasks.o: .\FreeRTOS\include\mpu_wrappers.h
+.\outfiles\tasks.o: .\FreeRTOS\include\task.h
+.\outfiles\tasks.o: .\FreeRTOS\include\list.h
+.\outfiles\tasks.o: .\FreeRTOS\include\timers.h
+.\outfiles\tasks.o: .\FreeRTOS\include\stack_macros.h
