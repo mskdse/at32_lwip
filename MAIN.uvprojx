@@ -339,7 +339,7 @@
               <MiscControls></MiscControls>
               <Define>AT32F437VGT7,USE_STDPERIPH_DRIVER</Define>
               <Undefine></Undefine>
-              <IncludePath>.\AT_SDK\drivers\inc;.\AT_SDK\cmsis\cm4\core_support;.\AT_SDK\cmsis\cm4\device_support;.\FreeRTOS\include;.\FreeRTOS\portable\RVDS\ARM_CM4F;.\USER;.\DEBUG;.\LWIP\src\include;.\LWIP\src\include\ipv4;.\LWIP\src\include\lwip;.\LWIP\src\include\netif;.\LWIP\port;.\LWIP\port\arch;.\AT_ETH</IncludePath>
+              <IncludePath>.\AT_SDK\drivers\inc;.\AT_SDK\cmsis\cm4\core_support;.\AT_SDK\cmsis\cm4\device_support;.\FreeRTOS\include;.\FreeRTOS\portable\RVDS\ARM_CM4F;.\USER;.\DEBUG;.\LWIP\src\include;.\LWIP\src\include\ipv4;.\LWIP\src\include\lwip;.\LWIP\src\include\netif;.\LWIP\port;.\LWIP\port\arch;.\AT_ETH;.\usb_drivers\inc;.\usbd_class\composite_cdc_msc;.\FATFS</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -866,6 +866,91 @@
           </Files>
         </Group>
         <Group>
+          <GroupName>USB/CORE</GroupName>
+          <Files>
+            <File>
+              <FileName>usb_core.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\usb_drivers\src\usb_core.c</FilePath>
+            </File>
+            <File>
+              <FileName>usbd_core.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\usb_drivers\src\usbd_core.c</FilePath>
+            </File>
+            <File>
+              <FileName>usbd_int.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\usb_drivers\src\usbd_int.c</FilePath>
+            </File>
+            <File>
+              <FileName>usbd_sdr.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\usb_drivers\src\usbd_sdr.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>USB/CLASS</GroupName>
+          <Files>
+            <File>
+              <FileName>cdc_msc_class.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\usbd_class\composite_cdc_msc\cdc_msc_class.c</FilePath>
+            </File>
+            <File>
+              <FileName>cdc_msc_desc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\usbd_class\composite_cdc_msc\cdc_msc_desc.c</FilePath>
+            </File>
+            <File>
+              <FileName>msc_bot_scsi.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\usbd_class\composite_cdc_msc\msc_bot_scsi.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>FATFS</GroupName>
+          <Files>
+            <File>
+              <FileName>diskio.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\FATFS\diskio.c</FilePath>
+            </File>
+            <File>
+              <FileName>diskio.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\FATFS\diskio.h</FilePath>
+            </File>
+            <File>
+              <FileName>ff.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\FATFS\ff.c</FilePath>
+            </File>
+            <File>
+              <FileName>ff.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\FATFS\ff.h</FilePath>
+            </File>
+            <File>
+              <FileName>ffconf.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\FATFS\ffconf.h</FilePath>
+            </File>
+            <File>
+              <FileName>ffsystem.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\FATFS\ffsystem.c</FilePath>
+            </File>
+            <File>
+              <FileName>ffunicode.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\FATFS\ffunicode.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
           <GroupName>DEBUG</GroupName>
           <Files>
             <File>
@@ -897,6 +982,21 @@
               <FileName>at32f435_437_int.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\USER\at32f435_437_int.c</FilePath>
+            </File>
+            <File>
+              <FileName>usb_conf.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\USER\usb_conf.h</FilePath>
+            </File>
+            <File>
+              <FileName>msc_diskio.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\USER\msc_diskio.c</FilePath>
+            </File>
+            <File>
+              <FileName>msc_diskio.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\USER\msc_diskio.h</FilePath>
             </File>
           </Files>
         </Group>

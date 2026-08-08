@@ -93,7 +93,7 @@
 
 #if defined(__ICCARM__) || defined(__CC_ARM) || defined(__GNUC__)
     #include <stdint.h>
-    static uint32_t systemcoreclock = 250000000;
+    static uint32_t systemcoreclock = 288000000;
 #endif
 
 

@@ -15,6 +15,8 @@
 .\outfiles\dhcp.o: .\FreeRTOS\include\deprecated_definitions.h
 .\outfiles\dhcp.o: .\FreeRTOS\portable\RVDS\ARM_CM4F\portmacro.h
 .\outfiles\dhcp.o: .\FreeRTOS\include\mpu_wrappers.h
+.\outfiles\dhcp.o: .\FreeRTOS\include\task.h
+.\outfiles\dhcp.o: .\FreeRTOS\include\list.h
 .\outfiles\dhcp.o: C:\Users\EVC2-5\AppData\Local\Keil_v5\ARM\ARMCC\Bin\..\include\errno.h
 .\outfiles\dhcp.o: .\LWIP\src\include\lwip/opt.h
 .\outfiles\dhcp.o: .\LWIP\src\include\lwip/stats.h

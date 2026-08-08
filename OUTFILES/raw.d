@@ -15,6 +15,8 @@
 .\outfiles\raw.o: .\FreeRTOS\include\deprecated_definitions.h
 .\outfiles\raw.o: .\FreeRTOS\portable\RVDS\ARM_CM4F\portmacro.h
 .\outfiles\raw.o: .\FreeRTOS\include\mpu_wrappers.h
+.\outfiles\raw.o: .\FreeRTOS\include\task.h
+.\outfiles\raw.o: .\FreeRTOS\include\list.h
 .\outfiles\raw.o: C:\Users\EVC2-5\AppData\Local\Keil_v5\ARM\ARMCC\Bin\..\include\errno.h
 .\outfiles\raw.o: .\LWIP\src\include\lwip/opt.h
 .\outfiles\raw.o: .\LWIP\src\include\lwip/def.h

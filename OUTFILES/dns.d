@@ -15,6 +15,8 @@
 .\outfiles\dns.o: .\FreeRTOS\include\deprecated_definitions.h
 .\outfiles\dns.o: .\FreeRTOS\portable\RVDS\ARM_CM4F\portmacro.h
 .\outfiles\dns.o: .\FreeRTOS\include\mpu_wrappers.h
+.\outfiles\dns.o: .\FreeRTOS\include\task.h
+.\outfiles\dns.o: .\FreeRTOS\include\list.h
 .\outfiles\dns.o: C:\Users\EVC2-5\AppData\Local\Keil_v5\ARM\ARMCC\Bin\..\include\errno.h
 .\outfiles\dns.o: .\LWIP\src\include\lwip/opt.h
 .\outfiles\dns.o: .\LWIP\src\include\lwip/udp.h

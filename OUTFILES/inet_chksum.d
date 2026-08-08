@@ -15,6 +15,8 @@
 .\outfiles\inet_chksum.o: .\FreeRTOS\include\deprecated_definitions.h
 .\outfiles\inet_chksum.o: .\FreeRTOS\portable\RVDS\ARM_CM4F\portmacro.h
 .\outfiles\inet_chksum.o: .\FreeRTOS\include\mpu_wrappers.h
+.\outfiles\inet_chksum.o: .\FreeRTOS\include\task.h
+.\outfiles\inet_chksum.o: .\FreeRTOS\include\list.h
 .\outfiles\inet_chksum.o: C:\Users\EVC2-5\AppData\Local\Keil_v5\ARM\ARMCC\Bin\..\include\errno.h
 .\outfiles\inet_chksum.o: .\LWIP\src\include\lwip/opt.h
 .\outfiles\inet_chksum.o: .\LWIP\src\include\ipv4\lwip/inet_chksum.h

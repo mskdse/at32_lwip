@@ -123,9 +123,11 @@ void tcpip_stack_init(void)
 	/*  When the netif is fully configured this function must be called.*/
   netif_set_up(&netif);  
 	
+	taskENTER_CRITICAL();
 	printf("IP:%s\r\n", ipaddr_ntoa(&netif.ip_addr));
   printf("MASK:%s\r\n", ipaddr_ntoa(&netif.netmask));
   printf("GW:%s\r\n", ipaddr_ntoa(&netif.gw));
+	taskEXIT_CRITICAL();
   
   /* Set the link callback function, this function is called on change of link status*/
   netif_set_link_callback(&netif, ethernetif_update_config);
@@ -161,11 +163,13 @@ void lwip_periodic_handle(volatile uint32_t localtime)
     if (last_ip == 0 && netif.ip_addr.addr != 0)
     {
       last_ip = netif.ip_addr.addr;
+			taskENTER_CRITICAL();
       printf("\r\n=== DHCP bound ===\r\n");
       printf("IP  : %s\r\n", ipaddr_ntoa(&netif.ip_addr));
       printf("MASK: %s\r\n", ipaddr_ntoa(&netif.netmask));
       printf("GW  : %s\r\n", ipaddr_ntoa(&netif.gw));
       printf("==================\r\n\r\n");
+			taskEXIT_CRITICAL();
       /* Configure DNS server */
       {
         ip_addr_t dns_srv;

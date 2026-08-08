@@ -16,6 +16,8 @@
 .\outfiles\at32_emac_phy.o: .\FreeRTOS\include\deprecated_definitions.h
 .\outfiles\at32_emac_phy.o: .\FreeRTOS\portable\RVDS\ARM_CM4F\portmacro.h
 .\outfiles\at32_emac_phy.o: .\FreeRTOS\include\mpu_wrappers.h
+.\outfiles\at32_emac_phy.o: .\FreeRTOS\include\task.h
+.\outfiles\at32_emac_phy.o: .\FreeRTOS\include\list.h
 .\outfiles\at32_emac_phy.o: C:\Users\EVC2-5\AppData\Local\Keil_v5\ARM\ARMCC\Bin\..\include\errno.h
 .\outfiles\at32_emac_phy.o: .\LWIP\src\include\lwip/opt.h
 .\outfiles\at32_emac_phy.o: .\LWIP\src\include\lwip/netif.h
@@ -66,5 +68,3 @@
 .\outfiles\at32_emac_phy.o: .\AT_SDK\drivers\inc\at32f435_437_emac.h
 .\outfiles\at32_emac_phy.o: .\AT_SDK\drivers\inc\at32f435_437_dvp.h
 .\outfiles\at32_emac_phy.o: .\AT_SDK\drivers\inc\at32f435_437_usb.h
-.\outfiles\at32_emac_phy.o: .\FreeRTOS\include\task.h
-.\outfiles\at32_emac_phy.o: .\FreeRTOS\include\list.h

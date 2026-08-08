@@ -15,6 +15,8 @@
 .\outfiles\memp.o: .\FreeRTOS\include\deprecated_definitions.h
 .\outfiles\memp.o: .\FreeRTOS\portable\RVDS\ARM_CM4F\portmacro.h
 .\outfiles\memp.o: .\FreeRTOS\include\mpu_wrappers.h
+.\outfiles\memp.o: .\FreeRTOS\include\task.h
+.\outfiles\memp.o: .\FreeRTOS\include\list.h
 .\outfiles\memp.o: C:\Users\EVC2-5\AppData\Local\Keil_v5\ARM\ARMCC\Bin\..\include\errno.h
 .\outfiles\memp.o: .\LWIP\src\include\lwip/opt.h
 .\outfiles\memp.o: .\LWIP\src\include\lwip/memp.h
@@ -38,8 +40,6 @@
 .\outfiles\memp.o: .\LWIP\src\include\lwip/netbuf.h
 .\outfiles\memp.o: .\LWIP\src\include\lwip/sys.h
 .\outfiles\memp.o: .\LWIP\port\arch/sys_arch.h
-.\outfiles\memp.o: .\FreeRTOS\include\task.h
-.\outfiles\memp.o: .\FreeRTOS\include\list.h
 .\outfiles\memp.o: .\FreeRTOS\include\queue.h
 .\outfiles\memp.o: .\FreeRTOS\include\semphr.h
 .\outfiles\memp.o: .\LWIP\src\include\lwip/api_msg.h

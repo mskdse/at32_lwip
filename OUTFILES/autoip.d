@@ -15,5 +15,7 @@
 .\outfiles\autoip.o: .\FreeRTOS\include\deprecated_definitions.h
 .\outfiles\autoip.o: .\FreeRTOS\portable\RVDS\ARM_CM4F\portmacro.h
 .\outfiles\autoip.o: .\FreeRTOS\include\mpu_wrappers.h
+.\outfiles\autoip.o: .\FreeRTOS\include\task.h
+.\outfiles\autoip.o: .\FreeRTOS\include\list.h
 .\outfiles\autoip.o: C:\Users\EVC2-5\AppData\Local\Keil_v5\ARM\ARMCC\Bin\..\include\errno.h
 .\outfiles\autoip.o: .\LWIP\src\include\lwip/opt.h

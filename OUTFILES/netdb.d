@@ -16,6 +16,8 @@
 .\outfiles\netdb.o: .\FreeRTOS\include\deprecated_definitions.h
 .\outfiles\netdb.o: .\FreeRTOS\portable\RVDS\ARM_CM4F\portmacro.h
 .\outfiles\netdb.o: .\FreeRTOS\include\mpu_wrappers.h
+.\outfiles\netdb.o: .\FreeRTOS\include\task.h
+.\outfiles\netdb.o: .\FreeRTOS\include\list.h
 .\outfiles\netdb.o: C:\Users\EVC2-5\AppData\Local\Keil_v5\ARM\ARMCC\Bin\..\include\errno.h
 .\outfiles\netdb.o: .\LWIP\src\include\lwip/opt.h
 .\outfiles\netdb.o: .\LWIP\src\include\ipv4\lwip/inet.h
@@ -33,8 +35,6 @@
 .\outfiles\netdb.o: .\LWIP\src\include\lwip/pbuf.h
 .\outfiles\netdb.o: .\LWIP\src\include\lwip/sys.h
 .\outfiles\netdb.o: .\LWIP\port\arch/sys_arch.h
-.\outfiles\netdb.o: .\FreeRTOS\include\task.h
-.\outfiles\netdb.o: .\FreeRTOS\include\list.h
 .\outfiles\netdb.o: .\FreeRTOS\include\queue.h
 .\outfiles\netdb.o: .\FreeRTOS\include\semphr.h
 .\outfiles\netdb.o: .\LWIP\src\include\lwip/dns.h

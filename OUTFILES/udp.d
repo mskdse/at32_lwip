@@ -15,6 +15,8 @@
 .\outfiles\udp.o: .\FreeRTOS\include\deprecated_definitions.h
 .\outfiles\udp.o: .\FreeRTOS\portable\RVDS\ARM_CM4F\portmacro.h
 .\outfiles\udp.o: .\FreeRTOS\include\mpu_wrappers.h
+.\outfiles\udp.o: .\FreeRTOS\include\task.h
+.\outfiles\udp.o: .\FreeRTOS\include\list.h
 .\outfiles\udp.o: C:\Users\EVC2-5\AppData\Local\Keil_v5\ARM\ARMCC\Bin\..\include\errno.h
 .\outfiles\udp.o: .\LWIP\src\include\lwip/opt.h
 .\outfiles\udp.o: .\LWIP\src\include\lwip/udp.h

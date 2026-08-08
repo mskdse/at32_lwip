@@ -68,3 +68,12 @@
 .\outfiles\main.o: .\LWIP\port\arch/epstruct.h
 .\outfiles\main.o: .\LWIP\src\include\lwip/pbuf.h
 .\outfiles\main.o: .\LWIP\src\include\lwip/dns.h
+.\outfiles\main.o: .\FATFS\ff.h
+.\outfiles\main.o: .\FATFS\ffconf.h
+.\outfiles\main.o: USER\usb_conf.h
+.\outfiles\main.o: .\usb_drivers\inc\usb_core.h
+.\outfiles\main.o: .\usb_drivers\inc\usb_std.h
+.\outfiles\main.o: .\usb_drivers\inc\usbd_core.h
+.\outfiles\main.o: .\usb_drivers\inc\usbd_int.h
+.\outfiles\main.o: .\usbd_class\composite_cdc_msc\cdc_msc_class.h
+.\outfiles\main.o: .\usbd_class\composite_cdc_msc\cdc_msc_desc.h

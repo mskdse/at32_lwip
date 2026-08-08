@@ -15,6 +15,8 @@
 .\outfiles\api_lib.o: .\FreeRTOS\include\deprecated_definitions.h
 .\outfiles\api_lib.o: .\FreeRTOS\portable\RVDS\ARM_CM4F\portmacro.h
 .\outfiles\api_lib.o: .\FreeRTOS\include\mpu_wrappers.h
+.\outfiles\api_lib.o: .\FreeRTOS\include\task.h
+.\outfiles\api_lib.o: .\FreeRTOS\include\list.h
 .\outfiles\api_lib.o: C:\Users\EVC2-5\AppData\Local\Keil_v5\ARM\ARMCC\Bin\..\include\errno.h
 .\outfiles\api_lib.o: .\LWIP\src\include\lwip/opt.h
 .\outfiles\api_lib.o: .\LWIP\src\include\lwip/api.h
@@ -27,8 +29,6 @@
 .\outfiles\api_lib.o: .\LWIP\port\arch/epstruct.h
 .\outfiles\api_lib.o: .\LWIP\src\include\lwip/sys.h
 .\outfiles\api_lib.o: .\LWIP\port\arch/sys_arch.h
-.\outfiles\api_lib.o: .\FreeRTOS\include\task.h
-.\outfiles\api_lib.o: .\FreeRTOS\include\list.h
 .\outfiles\api_lib.o: .\FreeRTOS\include\queue.h
 .\outfiles\api_lib.o: .\FreeRTOS\include\semphr.h
 .\outfiles\api_lib.o: .\LWIP\src\include\lwip/tcpip.h

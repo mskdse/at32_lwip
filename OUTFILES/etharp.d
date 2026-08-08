@@ -15,6 +15,8 @@
 .\outfiles\etharp.o: .\FreeRTOS\include\deprecated_definitions.h
 .\outfiles\etharp.o: .\FreeRTOS\portable\RVDS\ARM_CM4F\portmacro.h
 .\outfiles\etharp.o: .\FreeRTOS\include\mpu_wrappers.h
+.\outfiles\etharp.o: .\FreeRTOS\include\task.h
+.\outfiles\etharp.o: .\FreeRTOS\include\list.h
 .\outfiles\etharp.o: C:\Users\EVC2-5\AppData\Local\Keil_v5\ARM\ARMCC\Bin\..\include\errno.h
 .\outfiles\etharp.o: .\LWIP\src\include\lwip/opt.h
 .\outfiles\etharp.o: .\LWIP\src\include\ipv4\lwip/ip_addr.h

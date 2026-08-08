@@ -15,13 +15,13 @@
 .\outfiles\tcpip.o: .\FreeRTOS\include\deprecated_definitions.h
 .\outfiles\tcpip.o: .\FreeRTOS\portable\RVDS\ARM_CM4F\portmacro.h
 .\outfiles\tcpip.o: .\FreeRTOS\include\mpu_wrappers.h
+.\outfiles\tcpip.o: .\FreeRTOS\include\task.h
+.\outfiles\tcpip.o: .\FreeRTOS\include\list.h
 .\outfiles\tcpip.o: C:\Users\EVC2-5\AppData\Local\Keil_v5\ARM\ARMCC\Bin\..\include\errno.h
 .\outfiles\tcpip.o: .\LWIP\src\include\lwip/opt.h
 .\outfiles\tcpip.o: .\LWIP\src\include\lwip/sys.h
 .\outfiles\tcpip.o: .\LWIP\src\include\lwip/err.h
 .\outfiles\tcpip.o: .\LWIP\port\arch/sys_arch.h
-.\outfiles\tcpip.o: .\FreeRTOS\include\task.h
-.\outfiles\tcpip.o: .\FreeRTOS\include\list.h
 .\outfiles\tcpip.o: .\FreeRTOS\include\queue.h
 .\outfiles\tcpip.o: .\FreeRTOS\include\semphr.h
 .\outfiles\tcpip.o: .\LWIP\src\include\lwip/memp.h

@@ -16,6 +16,8 @@
 .\outfiles\netconf.o: .\FreeRTOS\include\deprecated_definitions.h
 .\outfiles\netconf.o: .\FreeRTOS\portable\RVDS\ARM_CM4F\portmacro.h
 .\outfiles\netconf.o: .\FreeRTOS\include\mpu_wrappers.h
+.\outfiles\netconf.o: .\FreeRTOS\include\task.h
+.\outfiles\netconf.o: .\FreeRTOS\include\list.h
 .\outfiles\netconf.o: C:\Users\EVC2-5\AppData\Local\Keil_v5\ARM\ARMCC\Bin\..\include\errno.h
 .\outfiles\netconf.o: .\LWIP\src\include\lwip/opt.h
 .\outfiles\netconf.o: .\LWIP\src\include\lwip/memp_std.h
@@ -36,8 +38,6 @@
 .\outfiles\netconf.o: .\LWIP\src\include\lwip/dhcp.h
 .\outfiles\netconf.o: .\LWIP\src\include\lwip/dns.h
 .\outfiles\netconf.o: .\LWIP\port\ethernetif.h
-.\outfiles\netconf.o: .\FreeRTOS\include\task.h
-.\outfiles\netconf.o: .\FreeRTOS\include\list.h
 .\outfiles\netconf.o: .\FreeRTOS\include\queue.h
 .\outfiles\netconf.o: .\FreeRTOS\include\semphr.h
 .\outfiles\netconf.o: AT_ETH\netconf.h

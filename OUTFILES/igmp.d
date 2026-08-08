@@ -15,6 +15,8 @@
 .\outfiles\igmp.o: .\FreeRTOS\include\deprecated_definitions.h
 .\outfiles\igmp.o: .\FreeRTOS\portable\RVDS\ARM_CM4F\portmacro.h
 .\outfiles\igmp.o: .\FreeRTOS\include\mpu_wrappers.h
+.\outfiles\igmp.o: .\FreeRTOS\include\task.h
+.\outfiles\igmp.o: .\FreeRTOS\include\list.h
 .\outfiles\igmp.o: C:\Users\EVC2-5\AppData\Local\Keil_v5\ARM\ARMCC\Bin\..\include\errno.h
 .\outfiles\igmp.o: .\LWIP\src\include\lwip/opt.h
 .\outfiles\igmp.o: .\LWIP\src\include\ipv4\lwip/igmp.h

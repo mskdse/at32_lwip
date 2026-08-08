@@ -15,6 +15,8 @@
 .\outfiles\sockets.o: .\FreeRTOS\include\deprecated_definitions.h
 .\outfiles\sockets.o: .\FreeRTOS\portable\RVDS\ARM_CM4F\portmacro.h
 .\outfiles\sockets.o: .\FreeRTOS\include\mpu_wrappers.h
+.\outfiles\sockets.o: .\FreeRTOS\include\task.h
+.\outfiles\sockets.o: .\FreeRTOS\include\list.h
 .\outfiles\sockets.o: C:\Users\EVC2-5\AppData\Local\Keil_v5\ARM\ARMCC\Bin\..\include\errno.h
 .\outfiles\sockets.o: .\LWIP\src\include\lwip/opt.h
 .\outfiles\sockets.o: .\LWIP\src\include\lwip/sockets.h
@@ -29,8 +31,6 @@
 .\outfiles\sockets.o: .\LWIP\src\include\lwip/err.h
 .\outfiles\sockets.o: .\LWIP\src\include\lwip/sys.h
 .\outfiles\sockets.o: .\LWIP\port\arch/sys_arch.h
-.\outfiles\sockets.o: .\FreeRTOS\include\task.h
-.\outfiles\sockets.o: .\FreeRTOS\include\list.h
 .\outfiles\sockets.o: .\FreeRTOS\include\queue.h
 .\outfiles\sockets.o: .\FreeRTOS\include\semphr.h
 .\outfiles\sockets.o: .\LWIP\src\include\ipv4\lwip/igmp.h

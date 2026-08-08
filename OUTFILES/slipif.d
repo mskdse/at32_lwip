@@ -16,6 +16,8 @@
 .\outfiles\slipif.o: .\FreeRTOS\include\deprecated_definitions.h
 .\outfiles\slipif.o: .\FreeRTOS\portable\RVDS\ARM_CM4F\portmacro.h
 .\outfiles\slipif.o: .\FreeRTOS\include\mpu_wrappers.h
+.\outfiles\slipif.o: .\FreeRTOS\include\task.h
+.\outfiles\slipif.o: .\FreeRTOS\include\list.h
 .\outfiles\slipif.o: C:\Users\EVC2-5\AppData\Local\Keil_v5\ARM\ARMCC\Bin\..\include\errno.h
 .\outfiles\slipif.o: .\LWIP\src\include\lwip/opt.h
 .\outfiles\slipif.o: .\LWIP\src\include\lwip/netif.h

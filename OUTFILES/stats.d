@@ -15,6 +15,8 @@
 .\outfiles\stats.o: .\FreeRTOS\include\deprecated_definitions.h
 .\outfiles\stats.o: .\FreeRTOS\portable\RVDS\ARM_CM4F\portmacro.h
 .\outfiles\stats.o: .\FreeRTOS\include\mpu_wrappers.h
+.\outfiles\stats.o: .\FreeRTOS\include\task.h
+.\outfiles\stats.o: .\FreeRTOS\include\list.h
 .\outfiles\stats.o: C:\Users\EVC2-5\AppData\Local\Keil_v5\ARM\ARMCC\Bin\..\include\errno.h
 .\outfiles\stats.o: .\LWIP\src\include\lwip/opt.h
 .\outfiles\stats.o: .\LWIP\src\include\lwip/def.h

@@ -15,6 +15,8 @@
 .\outfiles\netbuf.o: .\FreeRTOS\include\deprecated_definitions.h
 .\outfiles\netbuf.o: .\FreeRTOS\portable\RVDS\ARM_CM4F\portmacro.h
 .\outfiles\netbuf.o: .\FreeRTOS\include\mpu_wrappers.h
+.\outfiles\netbuf.o: .\FreeRTOS\include\task.h
+.\outfiles\netbuf.o: .\FreeRTOS\include\list.h
 .\outfiles\netbuf.o: C:\Users\EVC2-5\AppData\Local\Keil_v5\ARM\ARMCC\Bin\..\include\errno.h
 .\outfiles\netbuf.o: .\LWIP\src\include\lwip/opt.h
 .\outfiles\netbuf.o: .\LWIP\src\include\lwip/netbuf.h

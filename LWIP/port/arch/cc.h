@@ -34,6 +34,7 @@
 
 #include "stdio.h"
 #include "FreeRTOS.h"
+#include "task.h"
 #include <errno.h> 
 
 #define LWIP_PROVIDE_ERRNO
@@ -56,11 +57,13 @@ typedef u32_t           mem_ptr_t; // 内存指针类型
 
 #define LWIP_PLATFORM_ASSERT(message) \
     do { \
+			  taskENTER_CRITICAL(); \
         printf("Assertion failed: %s, file %s, line %d\n", message, __FILE__, __LINE__); \
+			  taskEXIT_CRITICAL(); \
     } while(0)
 
 #ifndef LWIP_PLATFORM_DIAG
-#define LWIP_PLATFORM_DIAG(x)   do { printf x; } while(0)
+#define LWIP_PLATFORM_DIAG(x)   do { taskENTER_CRITICAL();printf x;taskEXIT_CRITICAL();} while(0)
 #endif
 
 /* 定义格式化宏，用于 printf 打印 lwIP 的数据类型 */
@@ -113,8 +116,8 @@ typedef int sys_prot_t;
 #define PACK_STRUCT_USE_INCLUDES
 
 #define LWIP_ERROR(message, expression, handler) do { if (!(expression)) { \
-  printf("Assertion \"%s\" failed at line %d in %s\n", message, __LINE__, __FILE__); \
-  fflush(NULL);handler;} } while(0)
+  taskENTER_CRITICAL();printf("Assertion \"%s\" failed at line %d in %s\n", message, __LINE__, __FILE__); \
+  fflush(NULL);handler;taskEXIT_CRITICAL();} } while(0)
 
 #ifdef _MSC_VER
 /* C runtime functions redefined */

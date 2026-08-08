@@ -33,23 +33,23 @@ ARM Macro Assembler    Page 1
    21 00001000         ;   <o>  Heap Size (in Bytes) <0x0-0xFFFFFFFF:8>
    22 00001000         ; </h>
    23 00001000         
-   24 00001000 00000000 
+   24 00001000 00002000 
                        Heap_Size
-                               EQU              0x00000000
+                               EQU              0x00002000
    25 00001000         
    26 00001000                 AREA             HEAP, NOINIT, READWRITE, ALIGN=
 3
    27 00000000         __heap_base
    28 00000000         Heap_Mem
                                SPACE            Heap_Size
-   29 00000000         __heap_limit
-   30 00000000         
-   31 00000000                 PRESERVE8
-   32 00000000                 THUMB
-   33 00000000         
-   34 00000000         
-   35 00000000         ; Vector Table Mapped to Address 0 at Reset
-   36 00000000                 AREA             RESET, DATA, READONLY
+   29 00002000         __heap_limit
+   30 00002000         
+   31 00002000                 PRESERVE8
+   32 00002000                 THUMB
+   33 00002000         
+   34 00002000         
+   35 00002000         ; Vector Table Mapped to Address 0 at Reset
+   36 00002000                 AREA             RESET, DATA, READONLY
    37 00000000                 EXPORT           __Vectors
    38 00000000                 EXPORT           __Vectors_End
    39 00000000                 EXPORT           __Vectors_Size
@@ -800,7 +800,7 @@ Symbol: __heap_base
       At line 440 in file AT_SDK\cmsis\cm4\device_support\startup\mdk\startup_a
 t32f435_437.s
 Comment: __heap_base used once
-__heap_limit 00000000
+__heap_limit 00002000
 
 Symbol: __heap_limit
    Definitions
@@ -2280,7 +2280,7 @@ t32f435_437.s
 ARM Macro Assembler    Page 1 Alphabetic symbol ordering
 Absolute symbols
 
-Heap_Size 00000000
+Heap_Size 00002000
 
 Symbol: Heap_Size
    Definitions

@@ -15,11 +15,11 @@
 .\outfiles\sys_arch.o: .\FreeRTOS\include\deprecated_definitions.h
 .\outfiles\sys_arch.o: .\FreeRTOS\portable\RVDS\ARM_CM4F\portmacro.h
 .\outfiles\sys_arch.o: .\FreeRTOS\include\mpu_wrappers.h
+.\outfiles\sys_arch.o: .\FreeRTOS\include\task.h
+.\outfiles\sys_arch.o: .\FreeRTOS\include\list.h
 .\outfiles\sys_arch.o: C:\Users\EVC2-5\AppData\Local\Keil_v5\ARM\ARMCC\Bin\..\include\errno.h
 .\outfiles\sys_arch.o: .\LWIP\src\include\lwip/opt.h
 .\outfiles\sys_arch.o: .\LWIP\port\arch\sys_arch.h
-.\outfiles\sys_arch.o: .\FreeRTOS\include\task.h
-.\outfiles\sys_arch.o: .\FreeRTOS\include\list.h
 .\outfiles\sys_arch.o: .\FreeRTOS\include\queue.h
 .\outfiles\sys_arch.o: .\FreeRTOS\include\semphr.h
 .\outfiles\sys_arch.o: .\LWIP\src\include\lwip/stats.h
