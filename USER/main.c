@@ -1,6 +1,8 @@
 #include "at32f435_437.h"
 #include "at32f435_437_clock.h"
 #include "debug_usart.h"
+#include "w25x80.h"
+
 
 #include "FreeRTOS.h"
 #include "task.h"
@@ -14,6 +16,8 @@
 #include "at32_emac_phy.h"
 #include "lwip/dns.h"
 #include "lwip/netif.h"
+
+
 #include "ff.h"
 
 
@@ -34,6 +38,7 @@ void usb_low_power_wakeup_config(void);
 
 
 FATFS g_file_system;
+FRESULT res;
 
 
 extern void tcpip_stack_init(void);
@@ -76,49 +81,19 @@ int main(void)
   nvic_priority_group_config(NVIC_PRIORITY_GROUP_4);
   system_clock_config();
   debug_uart_print_init(115200);
-
+	
 /* 一开始默认SRAM设置只有128KB，排查了老半天，不过这些代码依旧不行，需要使用专门的AT-ICP工具修改配置 */
 //	flash_unlock();
 //	printf("eopb0 set%d\r\n",flash_eopb0_config(FLASH_EOPB0_SRAM_512K));
 //	flash_lock();
 //  printf("eopb0=%d\r\n",USD->eopb0);
+
+
+		/* 挂载 */
+		res = f_mount(&g_file_system, "0:", 1);
+		RTOS_PRINTF(("f_mount->res=%d\r\n", res));
 	
-	
-	/* 直接新建个文件系统然后挂载 */
-	FRESULT    res;
-	MKFS_PARM  mkfsopt;
-  BYTE* work_area=malloc(6000);
-	mkfsopt.align=0;
-	mkfsopt.au_size=0;
-	mkfsopt.fmt=FM_FAT;
-	mkfsopt.n_fat=1;
-	mkfsopt.n_root=0;
-	res = f_mkfs("0:", &mkfsopt, work_area, 6000);
-  RTOS_PRINTF(("f_mkfs->res=%d\r\n",res));
-	free(work_area);
-	work_area=NULL;
-	res = f_mount(&g_file_system,"0:",1);
-	RTOS_PRINTF(("f_mount->res=%d\r\n",res));
-	
-	/* 创建→写入→读取→删除->取消挂载 */
-	FIL* file=malloc(sizeof(FIL));
-	UINT bw, br;
-	char wbuf[] = "hello world";
-	char rbuf[32];
-	f_open(file, "0:/test.txt", FA_CREATE_ALWAYS | FA_WRITE);
-	f_write(file, wbuf, sizeof(wbuf)-1, &bw);
-	f_close(file);
-	f_open(file, "0:/test.txt", FA_READ);
-	f_read(file, rbuf, sizeof(rbuf)-1, &br);
-	f_close(file);
-	f_unlink("0:/test.txt");
-	free(file);
-	file=NULL;
-	RTOS_PRINTF(("write=%d, read=%d, data=%s\r\n", bw, br, rbuf));
-//	res = f_mount(&g_file_system,"0:",0);
-//	printf("f_umount->res=%d\r\n",res);
-	
-  
+
   taskENTER_CRITICAL(); 
   if(xTaskCreate((TaskFunction_t)network_task_function, "Network_task",
                  512, NULL, 3, &network_handler) != pdPASS)
@@ -149,10 +124,7 @@ static void network_task_function(void *pvParameters)
 
   for(;;)
   {
-    while(emac_received_packet_size_get() != 0)
-    {
-      lwip_pkt_handle();
-    }
+    while(emac_received_packet_size_get() != 0) lwip_pkt_handle();
     lwip_periodic_handle(xTaskGetTickCount());
     vTaskDelay(10);
   }
@@ -167,41 +139,20 @@ static void dns_task_function(void *pvParameters)
 
   /* Wait for DHCP to obtain an IP address */
   RTOS_PRINTF(("DNS task: waiting for IP...\r\n"));
-  while (netif.ip_addr.addr == 0)
-  {
-    vTaskDelay(500);
-  }
-  RTOS_PRINTF(("DNS task: got IP %s, resolving www.baidu.com...\r\n",
-         ipaddr_ntoa(&netif.ip_addr)));
+  while (netif.ip_addr.addr == 0) vTaskDelay(500);
+  RTOS_PRINTF(("DNS task: got IP %s, resolving www.baidu.com...\r\n",ipaddr_ntoa(&netif.ip_addr)));
 
   dns_done = 0;
-  err_t err = dns_gethostbyname("www.baidu.com", &dns_result,
-                                 dns_found, NULL);
+  err_t err = dns_gethostbyname("www.baidu.com", &dns_result,dns_found, NULL);
 
-  if (err == ERR_OK)
-  {
-    /* Cached / immediate result */
-    RTOS_PRINTF(("DNS: www.baidu.com -> %s (cached)\r\n", ipaddr_ntoa(&dns_result)));
-  }
-  else if (err == ERR_INPROGRESS)
-  {
-    RTOS_PRINTF(("DNS: request queued, waiting...\r\n"));
-  }
-  else
-  {
-    RTOS_PRINTF(("DNS: error %d\r\n", err));
-  }
+  if (err == ERR_OK)               RTOS_PRINTF(("DNS: www.baidu.com -> %s (cached)\r\n", ipaddr_ntoa(&dns_result)));
+  else if (err == ERR_INPROGRESS)  RTOS_PRINTF(("DNS: request queued, waiting...\r\n"));
+  else                             RTOS_PRINTF(("DNS: error %d\r\n", err));
 
   /* Let lwIP process until DNS completes or timeout */
-  for (int tick = 0; tick < 500 && !dns_done; tick++)
-  {
-    vTaskDelay(100);
-  }
+  for (int tick = 0; tick < 500 && !dns_done; tick++) vTaskDelay(100);
 
-  if (!dns_done)
-  {
-    RTOS_PRINTF(("DNS: timeout\r\n"));
-  }
+  if (!dns_done)                                      RTOS_PRINTF(("DNS: timeout\r\n"));
 
   vTaskDelete(NULL);
 }

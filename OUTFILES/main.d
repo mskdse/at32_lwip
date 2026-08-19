@@ -41,6 +41,9 @@
 .\outfiles\main.o: USER\at32f435_437_clock.h
 .\outfiles\main.o: .\DEBUG\debug_usart.h
 .\outfiles\main.o: C:\Users\EVC2-5\AppData\Local\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\outfiles\main.o: .\SPI-FLASH\w25x80.h
+.\outfiles\main.o: .\SPI-FLASH\spi_tranrecv.h
+.\outfiles\main.o: C:\Users\EVC2-5\AppData\Local\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 .\outfiles\main.o: .\FreeRTOS\include\FreeRTOS.h
 .\outfiles\main.o: C:\Users\EVC2-5\AppData\Local\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
 .\outfiles\main.o: .\FreeRTOS\include\FreeRTOSConfig.h

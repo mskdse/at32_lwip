@@ -25,7 +25,6 @@
 #include "msc_diskio.h"
 #include "cdc_msc_class.h"
 
-uint8_t INTER_SRAM[256*512];//使用内部RAM模拟文件系统，一个扇区假设512字节，总共256扇区。
 
 /** @addtogroup 437_USB_device_cdc_msc
   * @{
@@ -69,14 +68,12 @@ uint8_t *get_inquiry(uint8_t lun)
   */
 usb_sts_type msc_disk_read(uint8_t lun, uint64_t addr, uint8_t *read_buf, uint32_t len)
 {
-  uint32_t i = 0;
   switch(lun)
   {
-    case INTERNAL_SRAM_LUN:
-      for(i = 0; i < len; i ++) read_buf[i] = INTER_SRAM[addr + i];
-      break;
     case SPI_FLASH_LUN:
-      break;
+		{
+			w25x80_read_data(addr,read_buf,len);
+		}break;
     case SD_LUN:
       break;
     default:
@@ -95,15 +92,24 @@ usb_sts_type msc_disk_read(uint8_t lun, uint64_t addr, uint8_t *read_buf, uint32
   */
 usb_sts_type msc_disk_write(uint8_t lun, uint64_t addr, uint8_t *buf, uint32_t len)
 {
-  uint32_t i = 0;
-	
   switch(lun)
   {
-    case INTERNAL_SRAM_LUN:
-      for(i = 0; i < len; i ++) INTER_SRAM[addr + i]=buf[i];
-      break;
     case SPI_FLASH_LUN:
-      break;
+		{
+			uint32_t sector;
+			uint32_t count;
+
+			sector = addr / 4096;
+			count = (len + 4095) / 4096;
+
+			for(uint32_t i=0;i<count;i++)
+			{
+				w25x80_sector_erase(sector * 4096);
+				w25x80_write_data(sector * 4096,buf,4096);
+				sector++;
+				buf += 4096;
+			}
+		}break;
     case SD_LUN:
       break;
     default:
@@ -121,15 +127,13 @@ usb_sts_type msc_disk_write(uint8_t lun, uint64_t addr, uint8_t *buf, uint32_t l
   */
 usb_sts_type msc_disk_capacity(uint8_t lun, uint32_t *blk_nbr, uint32_t *blk_size)
 {
-	
   switch(lun)
   {
-    case INTERNAL_SRAM_LUN:
-      *blk_nbr =  256;
-      *blk_size = 512;
-      break;
     case SPI_FLASH_LUN:
-      break;
+		{
+			*blk_nbr =   256;
+      *blk_size = 4096;
+		}break;
     case SD_LUN:
       break;
     default:

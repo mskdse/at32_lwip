@@ -45,3 +45,6 @@
 .\outfiles\msc_bot_scsi.o: C:\Users\EVC2-5\AppData\Local\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 .\outfiles\msc_bot_scsi.o: .\usb_drivers\inc\usbd_core.h
 .\outfiles\msc_bot_scsi.o: .\USER\msc_diskio.h
+.\outfiles\msc_bot_scsi.o: .\SPI-FLASH\w25x80.h
+.\outfiles\msc_bot_scsi.o: .\SPI-FLASH\spi_tranrecv.h
+.\outfiles\msc_bot_scsi.o: C:\Users\EVC2-5\AppData\Local\Keil_v5\ARM\ARMCC\Bin\..\include\string.h

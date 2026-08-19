@@ -83,6 +83,8 @@
 ".\outfiles\cdc_msc_class.o"
 ".\outfiles\cdc_msc_desc.o"
 ".\outfiles\msc_bot_scsi.o"
+".\outfiles\spi_tranrecv.o"
+".\outfiles\w25x80.o"
 ".\outfiles\diskio.o"
 ".\outfiles\ff.o"
 ".\outfiles\ffsystem.o"

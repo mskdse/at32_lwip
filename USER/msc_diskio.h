@@ -33,6 +33,7 @@ extern "C" {
 
 #include "usb_conf.h"
 #include "usb_std.h"
+#include "w25x80.h"
 
 /** @addtogroup AT32F437_periph_examples
   * @{
@@ -41,10 +42,8 @@ extern "C" {
 /** @addtogroup 437_USB_device_msc
   * @{
   */
-#define INTERNAL_SRAM_LUN                0
-#define SPI_FLASH_LUN                    1
-#define SD_LUN                           2
-
+#define SPI_FLASH_LUN                0
+#define SD_LUN                       1
 
 uint8_t *get_inquiry(uint8_t lun);
 usb_sts_type msc_disk_read(uint8_t lun, uint64_t addr, uint8_t *read_buf, uint32_t len);

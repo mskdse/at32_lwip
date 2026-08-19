@@ -46,3 +46,6 @@
 .\outfiles\diskio.o: .\AT_SDK\drivers\inc\at32f435_437_usb.h
 .\outfiles\diskio.o: C:\Users\EVC2-5\AppData\Local\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 .\outfiles\diskio.o: .\usb_drivers\inc\usb_std.h
+.\outfiles\diskio.o: .\SPI-FLASH\w25x80.h
+.\outfiles\diskio.o: .\SPI-FLASH\spi_tranrecv.h
+.\outfiles\diskio.o: C:\Users\EVC2-5\AppData\Local\Keil_v5\ARM\ARMCC\Bin\..\include\string.h

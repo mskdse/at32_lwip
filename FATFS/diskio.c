@@ -12,7 +12,7 @@
 #include "msc_diskio.h"
 
 /* Example: Mapping of physical drive number for each drive */
-#define DEV_USB	  0	/* Map FTL to physical drive 0 */
+#define DEV_USB	    0	/* Map FTL to physical drive 0 */
 
 
 /*-----------------------------------------------------------------------*/
@@ -26,7 +26,6 @@ DSTATUS disk_status (
 	switch (pdrv) {
 
 	case DEV_USB :
-		
 		return 0;
 	
 	}
@@ -46,7 +45,8 @@ DSTATUS disk_initialize (
 	switch (pdrv) {
 
 	case DEV_USB :
-		return 0;
+		w25x80_init();
+	return 0;
 	
 	}
 	return STA_NOINIT;
@@ -68,7 +68,7 @@ DRESULT disk_read (
 	switch (pdrv) {
 
 	case DEV_USB :
-		msc_disk_read(DEV_USB,sector*1024,buff,count*1024);
+		msc_disk_read(DEV_USB,sector*4096,buff,count*4096);
 		return RES_OK;
 	
 	}
@@ -94,7 +94,7 @@ DRESULT disk_write (
 	switch (pdrv) {
 	
 	case DEV_USB :
-		msc_disk_write(DEV_USB,sector*1024,(uint8_t*)buff,count*1024);
+		msc_disk_write(DEV_USB,sector*4096,(uint8_t*)buff,count*4096);
 		return RES_OK;
 	
 	}
@@ -120,7 +120,7 @@ DRESULT disk_ioctl (
 	case DEV_USB :
 	{
 		if(GET_SECTOR_COUNT==cmd)      *((LBA_t*)buff)=256;
-		else if(GET_SECTOR_SIZE==cmd)  *((WORD*)buff)=512;
+		else if(GET_SECTOR_SIZE==cmd)  *((WORD*)buff)=4096;
 		else if(GET_BLOCK_SIZE==cmd)   *((DWORD*)buff)=1;
 	}return RES_OK;
 
