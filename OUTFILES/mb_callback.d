@@ -1,0 +1,10 @@
+.\outfiles\mb_callback.o: FreeModbus\mb_callback.c
+.\outfiles\mb_callback.o: FreeModbus\mb_callback.h
+.\outfiles\mb_callback.o: C:\Users\EVC2-5\AppData\Local\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\outfiles\mb_callback.o: .\FreeModbus\modbus\include\mb.h
+.\outfiles\mb_callback.o: .\FreeModbus\BARE\port\port.h
+.\outfiles\mb_callback.o: C:\Users\EVC2-5\AppData\Local\Keil_v5\ARM\ARMCC\Bin\..\include\assert.h
+.\outfiles\mb_callback.o: C:\Users\EVC2-5\AppData\Local\Keil_v5\ARM\ARMCC\Bin\..\include\inttypes.h
+.\outfiles\mb_callback.o: .\FreeModbus\modbus\include\mbport.h
+.\outfiles\mb_callback.o: .\FreeModbus\modbus\include\mbproto.h
+.\outfiles\mb_callback.o: C:\Users\EVC2-5\AppData\Local\Keil_v5\ARM\ARMCC\Bin\..\include\string.h

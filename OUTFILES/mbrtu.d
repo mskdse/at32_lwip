@@ -1,0 +1,13 @@
+.\outfiles\mbrtu.o: FreeModbus\modbus\rtu\mbrtu.c
+.\outfiles\mbrtu.o: C:\Users\EVC2-5\AppData\Local\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+.\outfiles\mbrtu.o: C:\Users\EVC2-5\AppData\Local\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+.\outfiles\mbrtu.o: .\FreeModbus\BARE\port\port.h
+.\outfiles\mbrtu.o: C:\Users\EVC2-5\AppData\Local\Keil_v5\ARM\ARMCC\Bin\..\include\assert.h
+.\outfiles\mbrtu.o: C:\Users\EVC2-5\AppData\Local\Keil_v5\ARM\ARMCC\Bin\..\include\inttypes.h
+.\outfiles\mbrtu.o: C:\Users\EVC2-5\AppData\Local\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\outfiles\mbrtu.o: .\FreeModbus\modbus\include\mb.h
+.\outfiles\mbrtu.o: .\FreeModbus\modbus\include\mbport.h
+.\outfiles\mbrtu.o: .\FreeModbus\modbus\include\mbproto.h
+.\outfiles\mbrtu.o: FreeModbus\modbus\rtu\mbrtu.h
+.\outfiles\mbrtu.o: .\FreeModbus\modbus\include\mbframe.h
+.\outfiles\mbrtu.o: FreeModbus\modbus\rtu\mbcrc.h

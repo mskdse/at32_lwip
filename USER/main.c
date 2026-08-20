@@ -19,7 +19,8 @@
 
 
 #include "ff.h"
-
+FATFS g_file_system;
+FRESULT res;
 
 #include "usb_conf.h"
 #include "usb_core.h"
@@ -37,9 +38,13 @@ void usb_gpio_config(void);
 void usb_low_power_wakeup_config(void);
 
 
-FATFS g_file_system;
-FRESULT res;
-
+#include "mb.h"
+#include "mbport.h"
+/* 声明 FreeModbus 端口函数 */
+extern void vMBPortTimersRestart(void);
+extern void vMBPortTimersPoll(void);
+extern uint16_t mb_usb_rx_data(uint8_t *data, uint16_t len);
+extern BOOL mb_usb_rx_available(void);
 
 extern void tcpip_stack_init(void);
 extern void lwip_pkt_handle(void);
@@ -120,7 +125,7 @@ static void network_task_function(void *pvParameters)
 	
 	/* Create DNS test task after stack is ready */
   xTaskCreate((TaskFunction_t)usb_task_function, "USB_task",
-              512, NULL, 3, &usb_handler);
+              512, NULL, 4, &usb_handler);
 
   for(;;)
   {
@@ -159,63 +164,64 @@ static void dns_task_function(void *pvParameters)
 
 static void usb_task_function(void *pvParameters)
 {
-	uint16_t data_len;
+    uint16_t data_len;
+    CHAR     byte;
 
-  uint32_t timeout;
-	
-	uint8_t send_zero_packet = 0;
-	
-	 /* usb gpio config */
-  usb_gpio_config();
-
+    /* USB 初始化（保留原有代码） */
+    usb_gpio_config();
 #ifdef USB_LOW_POWER_WAKUP
-  usb_low_power_wakeup_config();
+    usb_low_power_wakeup_config();
 #endif
+    crm_periph_clock_enable(OTG_CLOCK, TRUE);
+    usb_clock48m_select(USB_CLK_HEXT);
+    nvic_irq_enable(OTG_IRQ, 0, 0);
+    usbd_init(&otg_core_struct,
+              USB_FULL_SPEED_CORE_ID,
+              USB_ID,
+              &cdc_msc_class_handler,
+              &cdc_msc_desc_handler);
 
-  /* enable otgfs clock */
-  crm_periph_clock_enable(OTG_CLOCK, TRUE);
-
-  /* select usb 48m clcok source */
-  usb_clock48m_select(USB_CLK_HEXT);
-
-  /* enable otgfs irq */
-  nvic_irq_enable(OTG_IRQ, 0, 0);
-
-  /* init usb */
-  usbd_init(&otg_core_struct,
-            USB_FULL_SPEED_CORE_ID,
-            USB_ID,
-            &cdc_msc_class_handler,
-            &cdc_msc_desc_handler);
-	for(;;)
-	{
-		/* get usb vcp receive data */
-    data_len = usb_vcp_get_rxdata(&otg_core_struct.dev, usb_buffer);
-
-    if(data_len > 0 || send_zero_packet == 1)
+    /* 初始化 FreeModbus RTU 从站 */
+    eMBInit(MB_RTU, 0x01, 0, 115200, MB_PAR_NONE,1);
+    eMBEnable();
+    for (;;)
     {
-
-      /* bulk transfer is complete when the endpoint does one of the following
-         1 has transferred exactly the amount of data expected
-         2 transfers a packet with a payload size less than wMaxPacketSize or transfers a zero-length packet
-      */
-      if(data_len > 0)
-        send_zero_packet = 1;
-
-      if(data_len == 0)
-        send_zero_packet = 0;
-
-      timeout = 5000000;
-      do
-      {
-        /* send data to host */
-        if(usb_vcp_send_data(&otg_core_struct.dev, usb_buffer, data_len) == SUCCESS)
+        /* 获取 USB CDC 收到的数据 */
+        data_len = usb_vcp_get_rxdata(&otg_core_struct.dev, usb_buffer);
+        if (data_len > 0)
         {
-          break;
+					   /* 打印收到的原始数据 */
+            RTOS_PRINTF(("[MODBUS RX] len=%d: ", data_len));
+            for (uint16_t i = 0; i < data_len; i++) RTOS_PRINTF(("%02X ", usb_buffer[i]));
+            RTOS_PRINTF(("\r\n"));
+					
+            /* 将数据放入 Modbus 接收缓冲区 */
+            mb_usb_rx_data(usb_buffer, data_len);
+
+            /* 逐字节喂给 FreeModbus */
+            while (mb_usb_rx_available())
+            {
+                if (xMBPortSerialGetByte(&byte) == TRUE)
+                {
+                    vMBPortTimersRestart();      /* 复位 3.5 字符超时 */
+                    pxMBFrameCBByteReceived();   /* 通知协议栈收到一个字节 */
+                }
+                else
+                {
+                    break;
+                }
+            }
         }
-      }while(timeout --);
+
+        /* 检查定时器超时（帧结束检测） */
+        vMBPortTimersPoll();
+
+        /* 运行 FreeModbus 状态机 */
+        (void)eMBPoll();
+
+        /* 短暂延时，避免任务空转 */
+        vTaskDelay(pdMS_TO_TICKS(1));
     }
-	}
 }
 
 /**

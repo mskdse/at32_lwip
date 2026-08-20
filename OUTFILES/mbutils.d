@@ -1,0 +1,10 @@
+.\outfiles\mbutils.o: FreeModbus\modbus\functions\mbutils.c
+.\outfiles\mbutils.o: C:\Users\EVC2-5\AppData\Local\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+.\outfiles\mbutils.o: C:\Users\EVC2-5\AppData\Local\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+.\outfiles\mbutils.o: .\FreeModbus\BARE\port\port.h
+.\outfiles\mbutils.o: C:\Users\EVC2-5\AppData\Local\Keil_v5\ARM\ARMCC\Bin\..\include\assert.h
+.\outfiles\mbutils.o: C:\Users\EVC2-5\AppData\Local\Keil_v5\ARM\ARMCC\Bin\..\include\inttypes.h
+.\outfiles\mbutils.o: C:\Users\EVC2-5\AppData\Local\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\outfiles\mbutils.o: .\FreeModbus\modbus\include\mb.h
+.\outfiles\mbutils.o: .\FreeModbus\modbus\include\mbport.h
+.\outfiles\mbutils.o: .\FreeModbus\modbus\include\mbproto.h

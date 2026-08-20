@@ -123,6 +123,10 @@
 #define configIDLE_SHOULD_YIELD		1
 #define configUSE_MUTEXES         1
 
+#define configUSE_TIMERS          1
+#define configTIMER_TASK_PRIORITY        (  4 )      /* 定时器服务任务优先级 */
+#define configTIMER_QUEUE_LENGTH         ( 10 )     /* 定时器命令队列长度 */
+#define configTIMER_TASK_STACK_DEPTH     ( 256 )    /* 定时器服务任务堆栈大小 */
 
 /* Co-routine definitions. */
 #define configUSE_CO_ROUTINES 		0

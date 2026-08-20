@@ -206,7 +206,7 @@
 //#define DNS_DEBUG        LWIP_DBG_ON   /* DNS */
 
 #define LWIP_DNS                        1
-#define DNS_SERVER_IP_ADDR              "223.5.5.5"
+#define DNS_SERVER_IP_ADDR              "202.96.128.86"
 
 
 #endif /* LWIP_HDR_LWIPOPTS_H */

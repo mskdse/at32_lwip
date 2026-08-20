@@ -1,0 +1,17 @@
+.\outfiles\porttimer.o: FreeModbus\BARE\port\porttimer.c
+.\outfiles\porttimer.o: FreeModbus\BARE\port\port.h
+.\outfiles\porttimer.o: C:\Users\EVC2-5\AppData\Local\Keil_v5\ARM\ARMCC\Bin\..\include\assert.h
+.\outfiles\porttimer.o: C:\Users\EVC2-5\AppData\Local\Keil_v5\ARM\ARMCC\Bin\..\include\inttypes.h
+.\outfiles\porttimer.o: C:\Users\EVC2-5\AppData\Local\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\outfiles\porttimer.o: .\FreeModbus\modbus\include\mbport.h
+.\outfiles\porttimer.o: .\FreeRTOS\include\FreeRTOS.h
+.\outfiles\porttimer.o: C:\Users\EVC2-5\AppData\Local\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+.\outfiles\porttimer.o: .\FreeRTOS\include\FreeRTOSConfig.h
+.\outfiles\porttimer.o: .\FreeRTOS\include\projdefs.h
+.\outfiles\porttimer.o: .\FreeRTOS\include\portable.h
+.\outfiles\porttimer.o: .\FreeRTOS\include\deprecated_definitions.h
+.\outfiles\porttimer.o: .\FreeRTOS\portable\RVDS\ARM_CM4F\portmacro.h
+.\outfiles\porttimer.o: .\FreeRTOS\include\mpu_wrappers.h
+.\outfiles\porttimer.o: .\FreeRTOS\include\timers.h
+.\outfiles\porttimer.o: .\FreeRTOS\include\task.h
+.\outfiles\porttimer.o: .\FreeRTOS\include\list.h

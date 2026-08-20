@@ -80,3 +80,9 @@
 .\outfiles\main.o: .\usb_drivers\inc\usbd_int.h
 .\outfiles\main.o: .\usbd_class\composite_cdc_msc\cdc_msc_class.h
 .\outfiles\main.o: .\usbd_class\composite_cdc_msc\cdc_msc_desc.h
+.\outfiles\main.o: .\FreeModbus\modbus\include\mb.h
+.\outfiles\main.o: .\FreeModbus\BARE\port\port.h
+.\outfiles\main.o: C:\Users\EVC2-5\AppData\Local\Keil_v5\ARM\ARMCC\Bin\..\include\assert.h
+.\outfiles\main.o: C:\Users\EVC2-5\AppData\Local\Keil_v5\ARM\ARMCC\Bin\..\include\inttypes.h
+.\outfiles\main.o: .\FreeModbus\modbus\include\mbport.h
+.\outfiles\main.o: .\FreeModbus\modbus\include\mbproto.h

@@ -339,7 +339,7 @@
               <MiscControls></MiscControls>
               <Define>AT32F437VGT7,USE_STDPERIPH_DRIVER</Define>
               <Undefine></Undefine>
-              <IncludePath>.\AT_SDK\drivers\inc;.\AT_SDK\cmsis\cm4\core_support;.\AT_SDK\cmsis\cm4\device_support;.\FreeRTOS\include;.\FreeRTOS\portable\RVDS\ARM_CM4F;.\USER;.\DEBUG;.\LWIP\src\include;.\LWIP\src\include\ipv4;.\LWIP\src\include\lwip;.\LWIP\src\include\netif;.\LWIP\port;.\LWIP\port\arch;.\AT_ETH;.\usb_drivers\inc;.\usbd_class\composite_cdc_msc;.\FATFS;.\SPI-FLASH</IncludePath>
+              <IncludePath>.\AT_SDK\drivers\inc;.\AT_SDK\cmsis\cm4\core_support;.\AT_SDK\cmsis\cm4\device_support;.\FreeRTOS\include;.\FreeRTOS\portable\RVDS\ARM_CM4F;.\USER;.\DEBUG;.\LWIP\src\include;.\LWIP\src\include\ipv4;.\LWIP\src\include\lwip;.\LWIP\src\include\netif;.\LWIP\port;.\LWIP\port\arch;.\AT_ETH;.\usb_drivers\inc;.\usbd_class\composite_cdc_msc;.\FATFS;.\SPI-FLASH;.\FreeModbus\BARE\port;.\FreeModbus\modbus\rtu;.\FreeModbus\modbus\include</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -1023,6 +1023,91 @@
               <FileName>ffunicode.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\FATFS\ffunicode.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>MODBUS/PORT</GroupName>
+          <Files>
+            <File>
+              <FileName>portevent.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\FreeModbus\BARE\port\portevent.c</FilePath>
+            </File>
+            <File>
+              <FileName>portserial.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\FreeModbus\BARE\port\portserial.c</FilePath>
+            </File>
+            <File>
+              <FileName>porttimer.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\FreeModbus\BARE\port\porttimer.c</FilePath>
+            </File>
+            <File>
+              <FileName>mb_callback.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\FreeModbus\mb_callback.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>MODBUS/SRC</GroupName>
+          <Files>
+            <File>
+              <FileName>mb.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\FreeModbus\modbus\mb.c</FilePath>
+            </File>
+            <File>
+              <FileName>mbcrc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\FreeModbus\modbus\rtu\mbcrc.c</FilePath>
+            </File>
+            <File>
+              <FileName>mbrtu.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\FreeModbus\modbus\rtu\mbrtu.c</FilePath>
+            </File>
+            <File>
+              <FileName>mbfunccoils.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\FreeModbus\modbus\functions\mbfunccoils.c</FilePath>
+            </File>
+            <File>
+              <FileName>mbfuncdiag.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\FreeModbus\modbus\functions\mbfuncdiag.c</FilePath>
+            </File>
+            <File>
+              <FileName>mbfuncdisc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\FreeModbus\modbus\functions\mbfuncdisc.c</FilePath>
+            </File>
+            <File>
+              <FileName>mbfuncfile.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\FreeModbus\modbus\functions\mbfuncfile.c</FilePath>
+            </File>
+            <File>
+              <FileName>mbfuncholding.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\FreeModbus\modbus\functions\mbfuncholding.c</FilePath>
+            </File>
+            <File>
+              <FileName>mbfuncinput.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\FreeModbus\modbus\functions\mbfuncinput.c</FilePath>
+            </File>
+            <File>
+              <FileName>mbfuncother.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\FreeModbus\modbus\functions\mbfuncother.c</FilePath>
+            </File>
+            <File>
+              <FileName>mbutils.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\FreeModbus\modbus\functions\mbutils.c</FilePath>
             </File>
           </Files>
         </Group>
